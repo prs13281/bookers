@@ -9,7 +9,8 @@
   </thead>
   <tbody>
     <tr>
-      <td></td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
     </tr>
   </tbody>
 </table>
@@ -20,7 +21,7 @@
  <%= f.text_field :title %>
 
  <h5>body</h5>
- <%= f.text_field :body %>
+ <%= f.text_area :body %>
 
- <%= f.submit'Create Book' %>
+ <div><%= f.submit'Create Book' %></div>
  <% end %>
