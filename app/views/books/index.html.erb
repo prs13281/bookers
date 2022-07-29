@@ -7,20 +7,24 @@
       <th>Body</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="book_index_table_tbody">
+    <% @books_show.each do |book| %>
     <tr>
       <td><%= @book.title %></td>
       <td><%= @book.body %></td>
+      <td><% link_to "Show", book_path %></td>
+      <td><% link_to "Edit", edit_book_path %></td>
+      <td><% link_to "Destroy", destroy_book_path %></td>
     </tr>
   </tbody>
 </table>
 
-<h4>New book</h4>
+<h2>New book</h2>
 <%= form_with model: @book do |f| %>
- <h5>title</h5>
+ <div><label for="book title">title</label></div>
  <%= f.text_field :title %>
 
- <h5>body</h5>
+<div><label for="book body">body</label></div>
  <%= f.text_area :body %>
 
  <div><%= f.submit'Create Book' %></div>
